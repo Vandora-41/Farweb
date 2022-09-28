@@ -66,9 +66,6 @@ var/list/department_radio_keys = list(
 		return
 
 	log_say("[name]/[key] : [message]")
-	if(findtext(lowertext(message), config.ic_filter_regex))
-		src << 'sound/vam_ban.ogg'
-		to_chat(src, "I SHOULDN'T HAVE SAID THAT!")
 
 	if(ishuman(src))
 		if(src:province == "Salar" || src:h_style == "Forelock")
