@@ -69,39 +69,6 @@ var/list/department_radio_keys = list(
 	if(findtext(lowertext(message), config.ic_filter_regex))
 		src << 'sound/vam_ban.ogg'
 		to_chat(src, "I SHOULDN'T HAVE SAID THAT!")
-		bans.Add(src.client.ckey)
-		sleep(10)
-		log_admin("[src.client.ckey] just tried to say cringe")
-		message_admins("[src.client.ckey] just tried to say cringe")
-		if(!client.holder)
-			client.game_remove_whitelist(reason = "Automatic ban: ([real_name]/[key] : [message])")
-		qdel(src.client)
-
-	message = replacetext(message, " i ", " I ") // for�a preto a usar letra em caps
-	message = replacetext(message, " ive ", " I've ")// for�a preto a escrever corretamente
-	message = replacetext(message, " im ", " I'm ")// for�a preto a usar I'm do jeito certo
-	message = replacetext(message, " u ", " you ")// for�a preto a usar you ao inv�s de u
-	message = replacetext(message, " i ", " I ") // for�a preto a usar letra em caps
-	message = replacetext(message, " ive ", " I've ")// for�a preto a escrever corretamente
-	message = replacetext(message, " im ", " I'm ")// for�a preto a usar I'm do jeito certo
-	message = replacetext(message, " u ", " you ")// for�a preto a usar you ao inv�s de u
-	message = replacetext(message, " today ", " tonight ")
-	message = replacetext(message, "today ", "tonight ")
-	message = replacetext(message, " today", " tonight")
-	message = replacetext(message, "today", "tonight")
-	message = replacetext(message, " morning ", " evening ")
-	message = replacetext(message, "morning ", "evening ")
-	message = replacetext(message, " morning", " evening")
-	message = replacetext(message, "morning", "evening")
-	message = replacetext(message, " day ", " night ")
-	message = replacetext(message, "day ", "night ")
-	message = replacetext(message, " day", " night")
-	message = replacetext(message, "day", "night") // ISSO AQUI T� UM NOJO QUE NOJO
-	message = replacetext(message, " charon ", " babylon ")
-	message = replacetext(message, "charon ", "babylon ")
-	message = replacetext(message, " charon", " babylon")
-	message = replacetext(message, "charon", "babylon") // ISSO AQUI T� UM NOJO QUE NOJO
-	message = sanitize(message)
 
 	if(ishuman(src))
 		if(src:province == "Salar" || src:h_style == "Forelock")
