@@ -388,6 +388,11 @@ client/verb/ambi_volume()
 	prefs?.save_preferences()
 	prefs?.savefile_update()
 
+client/verb/nasiloynanir()
+	set name = "Nasiloynanir"
+	set category = "OOC"
+	to_chat(usr, "<spanclass='jogtowalk'>Bu kısım yapım aşamasındadır.</span>")
+	
 client/verb/music_volume()
 	set name = "MusicVolume"
 	set category = "OOC"
