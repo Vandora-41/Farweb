@@ -29,7 +29,7 @@ client/verb/prompt_command()
 			if("invite")
 				if((ckey(usr.key) in comradelist) || usr.client.holder || usr.ckey == SECRET_GUARDIAN)
 				//if(ckey(usr.key) in villainlist || ckey(usr.key) in comradelist)
-					if(usr.client.prefs.roundsplayed % 6 != 0 && !usr.client.holder && !(usr.ckey == SECRET_GUARDIAN))
+					if(usr.client.prefs.roundsplayed / roundsinvite < 6 && !usr.client.holder && !(usr.ckey == SECRET_GUARDIAN))
 						to_chat(src, "<span class='highlighttext'>You need [usr.client.prefs.roundsplayed % 6] rounds to invite other players. You have [usr.client.prefs.roundsplayed] rounds played.</span>")
 						return
 					else
@@ -37,7 +37,7 @@ client/verb/prompt_command()
 						return
 				else
 					if(ckey(usr.key) in villainlist)
-						if(usr.client.prefs.roundsplayed % 3 != 0 && !usr.client.holder && !(usr.ckey == SECRET_GUARDIAN))
+						if(usr.client.prefs.roundsplayed / roundsinvite < 3  && !usr.client.holder && !(usr.ckey == SECRET_GUARDIAN))
 							to_chat(src, "<span class='highlighttext'>You need [usr.client.prefs.roundsplayed % 3] rounds to invite other players. You have [usr.client.prefs.roundsplayed] rounds played.</span>")
 							return
 						else
