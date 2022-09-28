@@ -221,7 +221,7 @@ client/verb/debug_panel()
 
 
 /client/proc/optionsUpdate()
-	return "<tr><td>" + generateVerbList(list(list("OOC", "OOC"), list("Adminhelp", "Admin Help"),list("Nasiloynanir", "Nasil Oynanır?"), list(".togglefullscreen", "Toggle Fullscreen"), list("LobbyMusic", "Toggle Lobby Music"), list("Midis", "Toggle Midis"), list("AmbiVolume", "Ambience Volume (0-255)"), list("MusicVolume", "Music Volume (0, 255)"))) + "</td></tr>"
+	return "<tr><td>" + generateVerbList(list(list("OOC", "OOC"), list("Adminhelp", "Admin Help"),list(".helpmenu", "Yardim Menüsü"), list(".togglefullscreen", "Toggle Fullscreen"), list("LobbyMusic", "Toggle Lobby Music"), list("Midis", "Toggle Midis"), list("AmbiVolume", "Ambience Volume (0-255)"), list("MusicVolume", "Music Volume (0, 255)"))) + "</td></tr>"
 
 
 /client/proc/chromeUpdate()
