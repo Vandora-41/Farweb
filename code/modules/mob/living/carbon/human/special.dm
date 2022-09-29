@@ -688,7 +688,7 @@
 						qdel(src.head)
 					if(src.belt)
 						qdel(src.belt)
-					src.equip_to_slot_or_del(new /obj/item/clothing/under/child_jumpsuit(src), slot_w_uniform)
+					src.equip_to_slot_or_del(new /obj/item/clothing/under/urchin(src), slot_w_uniform)
 					src.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/vest/squire(src), slot_wear_suit)
 					src.equip_to_slot_or_del(new /obj/item/clothing/shoes/lw/child/shoes(src), slot_shoes)
 					src.equip_to_slot_or_del(new /obj/item/weapon/gun/projectile/newRevolver/duelista/neoclassic(src), slot_belt)
