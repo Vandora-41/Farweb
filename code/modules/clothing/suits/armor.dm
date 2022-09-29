@@ -89,7 +89,7 @@
 
 /obj/item/clothing/suit/armor/vest/iron_cuirass
 	name = "iron cuirass"
-	icon_state = "ironcuirass"
+	icon_state = "ironplate"
 	slowdown = 0
 	armor = list(melee = 40, bullet = 0, laser = 0, energy = 0, bomb = 5, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|GROIN
@@ -103,7 +103,7 @@
 /obj/item/clothing/suit/armor/vest/leja
 	name = "leja"
 	desc = ""
-	icon_state = "leja"
+	icon_state = "ironplate"
 	slowdown = 0
 	armor = list(melee = 20, bullet = 0, laser = 0, energy = 0, bomb = 5, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|GROIN
@@ -220,7 +220,7 @@
 /obj/item/clothing/suit/storage/vest/flakjacket
 	name = "flak jacket"
 	desc = "A jacket that excels in protecting the wearer against high-velocity solid projectiles."
-	icon_state = "flakjacket"
+	icon_state = "coatjacket"
 	item_state = "opvest"
 	blood_overlay_type = "armor"
 	flags = FPRINT | TABLEPASS | ONESIZEFITSALL
@@ -232,7 +232,7 @@
 
 /obj/item/clothing/suit/storage/vest/flakjacket/old
 	name = "old flak jacket"
-	icon_state = "oldflakjacket"
+	icon_state = "coatjacket"
 	armor = list(melee = 4, bullet = 25, laser = 0, energy = 5, bomb = 35, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/storage/vest/flakjacket/old/coat

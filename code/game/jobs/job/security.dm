@@ -156,7 +156,7 @@ datum/job/ordinator
 		H.voicetype = "sketchy"
 		H.outsider = TRUE
 		H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/security(H), slot_w_uniform)
-		H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/vest/sheriff(H), slot_wear_suit)
+		H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/vest/ravcoat(H), slot_wear_suit)
 		H.equip_to_slot_or_del(new /obj/item/clothing/head/papakha(H), slot_head)
 		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/lw/bastard(H), slot_shoes)
 		H.equip_to_slot_or_del(new /obj/item/device/radio/headset/bracelet/security(H), slot_wrist_r)
