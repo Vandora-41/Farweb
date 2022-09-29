@@ -411,7 +411,7 @@ var/fortHand = null
 			return 0
 		..()
 		H.set_species("Child")
-		H.equip_to_slot_or_del(new /obj/item/clothing/under/child_jumpsuit(H), slot_w_uniform)
+		H.equip_to_slot_or_del(new /obj/item/clothing/under/urchin(H), slot_w_uniform)
 		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/lw/child/shoes(H), slot_shoes)
 		return 1
 */
@@ -442,7 +442,7 @@ var/fortHand = null
 		..()
 		H.set_species("Child")
 		H.equip_to_slot_or_del(new /obj/item/device/radio/headset/bracelet/cheap(H), slot_wrist_r)
-		H.equip_to_slot_or_del(new /obj/item/clothing/under/child_jumpsuit(H), slot_w_uniform)
+		H.equip_to_slot_or_del(new /obj/item/clothing/under/urchin(H), slot_w_uniform)
 		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/lw/child/miner(H), slot_shoes)
 		H.equip_to_slot_or_del(new /obj/item/weapon/rag(H), slot_r_store)
 		H.vice = null
@@ -516,7 +516,7 @@ var/fortHand = null
 			return 0
 		..()
 		if(H.isChild())
-			H.equip_to_slot_or_del(new /obj/item/clothing/under/child_jumpsuit(H), slot_w_uniform)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/urchin(H), slot_w_uniform)
 			H.equip_to_slot_or_del(new /obj/item/clothing/head/ushanka(H), slot_head)
 			H.equip_to_slot_or_del(new /obj/item/clothing/shoes/lw/child/miner(H), slot_shoes)
 			H.equip_to_slot_or_del(new /obj/item/clothing/suit/disciple(H), slot_wear_suit)
