@@ -220,7 +220,7 @@
 /obj/item/clothing/suit/storage/vest/flakjacket
 	name = "flak jacket"
 	desc = "A jacket that excels in protecting the wearer against high-velocity solid projectiles."
-	icon_state = "flakjacket"
+	icon_state = "coatjacket"
 	item_state = "opvest"
 	blood_overlay_type = "armor"
 	flags = FPRINT | TABLEPASS | ONESIZEFITSALL
@@ -232,7 +232,7 @@
 
 /obj/item/clothing/suit/storage/vest/flakjacket/old
 	name = "old flak jacket"
-	icon_state = "oldflakjacket"
+	icon_state = "coatjacket"
 	armor = list(melee = 4, bullet = 25, laser = 0, energy = 5, bomb = 35, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/storage/vest/flakjacket/old/coat
