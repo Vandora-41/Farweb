@@ -267,9 +267,9 @@
 
 /obj/item/clothing/under/ordinator
 	name = "tribunal enlisted uniform"
-	icon_state = "ordinator"
-	item_state = "ordinator"
-	item_color = "ordinator"
+	icon_state = "oldordinator"
+	item_state = "oldordinator"
+	item_color = "oldordinator"
 
 /obj/item/clothing/under/ordinatorLT
 	name = "tribunal officer uniform"
