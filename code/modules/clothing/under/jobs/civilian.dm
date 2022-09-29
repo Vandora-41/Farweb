@@ -160,10 +160,9 @@
 
 
 /obj/item/clothing/under/rank/hydroponics
-	name = "leather pants"
-	icon_state = "hydroponics"
-	item_state = "g_suit"
-	item_color = "hydroponics"
+	name = "leather suit"
+	icon_state = "consyte"
+	item_color = "consyte"
 	permeability_coefficient = 0.50
 	flags = FPRINT | TABLEPASS
 
