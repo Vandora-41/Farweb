@@ -89,7 +89,7 @@
 
 /obj/item/clothing/suit/armor/vest/iron_cuirass
 	name = "iron cuirass"
-	icon_state = "ironcuirass"
+	icon_state = "ironplate"
 	slowdown = 0
 	armor = list(melee = 40, bullet = 0, laser = 0, energy = 0, bomb = 5, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|GROIN
@@ -103,7 +103,7 @@
 /obj/item/clothing/suit/armor/vest/leja
 	name = "leja"
 	desc = ""
-	icon_state = "leja"
+	icon_state = "ironplate"
 	slowdown = 0
 	armor = list(melee = 20, bullet = 0, laser = 0, energy = 0, bomb = 5, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|GROIN
