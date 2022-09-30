@@ -192,6 +192,7 @@ var/rtlog_path
 	TgsReboot()
 	TgsEndProcess()
 	..(reason)
+	
 
 /hook/startup/proc/loadMode()
 	world.load_mode()

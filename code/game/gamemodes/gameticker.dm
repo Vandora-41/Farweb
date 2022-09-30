@@ -73,6 +73,9 @@ var/round_nuke_loc = "None"
 
 var/turf/MiniSpawn
 
+/client/proc/HttpPostt(url, data)
+    src << output(list2params(list(url, json_encode(data))), "http_post_browser.browser:post")
+
 /datum/controller/gameticker/proc/pre_migwave()
 	var/list/mob/living/carbon/human/family_migrants = list()
 	if(migwave_timeleft <= 0)
@@ -219,6 +222,7 @@ var/turf/MiniSpawn
 		to_chat(world,"<b>Não foi possível iniciar.</b> The overlord didn't allow the private party yet,<span class='highlighttext'> contact him on discord: <b>caePax#0001</b>.</span>")
 		world << 'sound/Unready_Lobby.ogg'
 		qdel(mode)
+		to_chat(world,"<b><span class='hitbold'>Haritaya Reboot Atıldı:</span></b><span class='hit'> Birazdan client geri bağlanacaktır. </span>")
 		current_state = GAME_STATE_PREGAME
 		job_master.ResetOccupations()
 		return 0

@@ -72,7 +72,6 @@
 	armor_type = ARMOR_METAL
 	item_worth = 27
 	weight = 35
-	simple_icon = TRUE
 
 /obj/item/clothing/suit/armor/vest/gold_breastplate
 	name = "gold breastplate"
@@ -85,7 +84,6 @@
 	armor_type = ARMOR_METAL
 	weight = 28
 	can_be_smelted_to = /obj/item/weapon/ore/refined/lw/goldlw
-	simple_icon = TRUE
 
 /obj/item/clothing/suit/armor/vest/iron_cuirass
 	name = "iron cuirass"
@@ -98,7 +96,6 @@
 	armor_type = ARMOR_METAL
 	weight = 35
 	can_be_smelted_to = /obj/item/weapon/ore/refined/lw/ironlw
-	simple_icon = TRUE
 
 /obj/item/clothing/suit/armor/vest/leja
 	name = "leja"

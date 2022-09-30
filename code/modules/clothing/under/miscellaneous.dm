@@ -17,8 +17,8 @@
 /obj/item/clothing/under/new_cut
 	name = "mafiaman outfit"
 	desc = ""
-	icon_state = "new_cut"
-	item_color = "new_cut"
+	icon_state = "new_cut_alt"
+	item_color = "new_cut_alt"
 	item_state = "w_suit"
 
 /obj/item/clothing/under/new_cut_alt
