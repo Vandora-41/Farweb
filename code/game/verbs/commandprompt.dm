@@ -218,7 +218,7 @@ client/verb/prompt_command()
 			if("reboot")
 				if(!usr.client.holder && !(usr.ckey == SECRET_GUARDIAN))
 					to_chat(usr, "<span class='highlighttext'>Yetkin yok pasam.</span>")
-					return
+					return	
 				world.Reboot()
 			if("unban")
 				if(!usr.client.holder && !(usr.ckey == SECRET_GUARDIAN))

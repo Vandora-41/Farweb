@@ -243,7 +243,7 @@ var/sqladdress = "127.0.0.1"
 var/sqlport = "3306"
 var/sqldb = "farweb"
 var/sqllogin = "root"
-var/sqlpass = ""
+var/sqlpass = "123asd456"
 
 	// For FTP requests. (i.e. downloading runtime logs.)
 	// However it'd be ok to use for accessing attack logs and such too, which are even laggier.

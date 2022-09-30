@@ -67,6 +67,7 @@ var/list/department_radio_keys = list(
 
 	log_say("[name]/[key] : [message]")
 
+
 	if(ishuman(src))
 		if(src:province == "Salar" || src:h_style == "Forelock")
 			message = salarTalk(message)

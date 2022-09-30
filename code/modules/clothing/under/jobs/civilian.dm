@@ -177,10 +177,10 @@
 
 
 /obj/item/clothing/under/rank/janitor
-	desc = "Old uniform, usually wore by morticians."
+	desc = "Old uniform, usuaally wore by morticians."
 	name = "mortician garment"
-	icon_state = "janitor"
-	item_color = "janitor"
+	icon_state = "consyte"
+	item_color = "consyte"
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 10, rad = 0)
 	flags = FPRINT | TABLEPASS
 
