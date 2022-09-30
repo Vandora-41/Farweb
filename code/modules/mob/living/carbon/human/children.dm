@@ -22,7 +22,7 @@
 	name = "scullion's uniform"
 	desc = "Fitted just for kids."
 	icon_state = "grey"
-	item_color = "grey"
+	item_color = "child_grey"
 	species_restricted = list("Child")
 
 /obj/item/clothing/under/urchin

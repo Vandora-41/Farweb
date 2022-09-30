@@ -284,8 +284,8 @@
 /obj/item/clothing/suit/chef
 	name = "Innkeeper's garment"
 	desc = "An apron used by a high class chef."
-	icon_state = "inndress"
-	item_state = "inndress"
+	icon_state = "chef"
+	item_state = "chef"
 	gas_transfer_coefficient = 0.90
 	permeability_coefficient = 0.50
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
@@ -304,8 +304,8 @@
 /obj/item/clothing/suit/chef/classic
 	name = "A classic chef's apron."
 	desc = "A basic, dull, white chef's apron."
-	icon_state = "inndress"
-	item_state = "inndress"
+	icon_state = "apronchef"
+	item_state = "apronchef"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 

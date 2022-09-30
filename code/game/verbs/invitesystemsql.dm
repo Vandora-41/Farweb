@@ -57,7 +57,7 @@ client/proc/invite_ckey()
 			to_chat(usr, "<span class='highlighttext'>[invitee] has been invited.</span>")
 			usr << 'sound/effects/thanet.ogg'
 			var/inviteez = "`[invitee] has been invited by [usr.ckey]` [reason]"
-			HttpPost("https://discord.com/api/webhooks/1024679109978230815/F369ydz7EMwJD0xhyN1SLy5i1QRlBXdLMhL7xeL7icHZ0x2yyb2GTSZaffIrKZAphLNz",list(content = inviteez,username = usr.ckey))
+			HttpPost("webhookhere")
 			return
 	else
 		var/confirmation = input("You will invite [invitee]. Are you sure?","Confirmation") in list ("Yes","No")
@@ -78,7 +78,7 @@ client/proc/invite_ckey()
 			to_chat(usr, "<span class='highlighttext'>[invitee] has been invited.</span>")
 			usr << 'sound/effects/thanet.ogg'
 			var/inviteez = "`[invitee] has been invited by [usr.ckey]` [reason]"
-			HttpPost("https://discord.com/api/webhooks/1024679109978230815/F369ydz7EMwJD0xhyN1SLy5i1QRlBXdLMhL7xeL7icHZ0x2yyb2GTSZaffIrKZAphLNz",list(content = inviteez,username = usr.ckey))
+			HttpPost("webhook here")
 			return
 
 

@@ -24,6 +24,7 @@
 		H.equip_to_slot_or_del(new /obj/item/device/radio/headset/bracelet/esculap(H), slot_wrist_r)
 		H.equip_to_slot_or_del(new /obj/item/clothing/under/common/smith(H), slot_w_uniform)
 		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/lw/boots(H), slot_shoes)
+		H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/esculap(H), slot_wear_suit)
 		H.add_event("nobleblood", /datum/happiness_event/noble_blood)
 		H.add_perk(/datum/perk/chemical)
 		H.terriblethings = TRUE

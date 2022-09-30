@@ -8,7 +8,7 @@
             src.helpmenu()
             return
         if("feedback")
-            var/list/feedlist = list("Bug","Propose an Idea","Share Impressions","Report Balance Issues","Mistranslations","Possible Abuse","Mapping Flaw","(CANCEL)")
+            var/list/feedlist = list("Bug","Propose an Idea","Share Impressions","Report Balance Issues","Mistranslations","Possible Abuse","Mapping Flaw","Ideas for New Maps", "Offer an Item Description","(CANCEL)")
             var/bugtype = input("Select Category","[src.key] Feedback") in feedlist
             if(bugtype == "(CANCEL)")
                 return
@@ -20,9 +20,9 @@
             var/bugreporttext = "**__FEEDBACK__**| [ckey]|*Story [story_id]* \n `[bugtype]`"
             if(bugtype == "Mapping Flaw")
                 bugreporttext = "**__FEEDBACK__**| [ckey]|*Story [story_id]* \n`[bugtype]` \n`LOCATION:[usr.x]x, [usr.y]y, [usr.z]z` \n`MAP:[currentmaprotation]`"
-            HttpPost("https://discord.com/api/webhooks/1024674892173545512/VOutvJFX-XC9Nrww1qmTTMZjMGHU344MlhP46IEwO2EKc5jSrk9ZXwGVnPN3rtmTR6N9",list(content = bugreporttext,username = key))
+            HttpPost("make your own webhook",list(content = bugreporttext,username = key))
             spawn(10)
-                HttpPost("https://discord.com/api/webhooks/1024674892173545512/VOutvJFX-XC9Nrww1qmTTMZjMGHU344MlhP46IEwO2EKc5jSrk9ZXwGVnPN3rtmTR6N9",list(content = bugreport,username = key))
+                HttpPost("make your own webhook",list(content = bugreport,username = key))
                 to_chat(src, "<span class='highlighttext'>Your feedback has been reported. <i>\"[bugreport]\"</i></span>")
                 src << 'sound/effects/thanet.ogg'
         if("positive")
@@ -44,10 +44,10 @@
                 return
             var/feedbackgoodtext = "**__FEEDBACK__:** | [chosenkey]| *Positive!*"
             var/endfeedback = "`[feedbackgood]`"
-            HttpPost("https://discord.com/api/webhooks/1024675422757191730/yKW4VVka4GMWSfqvs7GcBcr1w_OaCAud_nRWPcN2NTcM7QcFE2RdCleMDGvyvP6yVupj",list(content = feedbackgoodtext,username = key))
+            HttpPost("make your own webhook",list(content = feedbackgoodtext,username = key))
             var/DBQuery/feedback_good = dbcon.NewQuery("INSERT INTO reputation (ckey, giver_ckey, value, reason) VALUES (\"[checkkey]\", \"[src.ckey]\", \"1\", \"[feedbackgood]\")")
             spawn(10)
-                HttpPost("https://discord.com/api/webhooks/1024675422757191730/yKW4VVka4GMWSfqvs7GcBcr1w_OaCAud_nRWPcN2NTcM7QcFE2RdCleMDGvyvP6yVupj",list(content = endfeedback,username = key))
+                HttpPost("make your own webhook",list(content = endfeedback,username = key))
                 if(!feedback_good.Execute())
                     world.log << feedback_good.ErrorMsg()
                     to_chat(src, "<span class='highlighttext'>Something went wrong. Report it.</span>")
@@ -58,7 +58,7 @@
             to_chat(src, "<i>Your opinion will only be visible to those who participate in the decision-making process.</i>")
             var/chosenkey = input("Input a ckey (EXACT USERNAME, CANNOT BE MOB NAME)","[src.key] - Negative Reputation")
             if(!chosenkey)
-                to_chat(src, "<span class='highlighttext'>Wrong key you stupid fuck!</span>")
+                to_chat(src, "<span class='highlighttext'>Invalid Key!</span>")
                 return
             var/checkkey = ckey(chosenkey)
             if(src.ckey == checkkey)
@@ -73,10 +73,10 @@
                 return
             var/feedbackbadtext = "**__FEEDBACK__:** | [chosenkey]| *Negative!*"
             var/endfeedback = "`[feedbackbad]`"
-            HttpPost("https://discord.com/api/webhooks/1024675422757191730/yKW4VVka4GMWSfqvs7GcBcr1w_OaCAud_nRWPcN2NTcM7QcFE2RdCleMDGvyvP6yVupj",list(content = feedbackbadtext,username = key))
+            HttpPost("make your own webhook",list(content = feedbackbadtext,username = key))
             var/DBQuery/feedback_bad = dbcon.NewQuery("INSERT INTO reputation (ckey, giver_ckey, value, reason) VALUES (\"[checkkey]\", \"[src.ckey]\", \"-1\", \"[feedbackbad]\")")
             spawn(10)
-                HttpPost("https://discord.com/api/webhooks/1024675422757191730/yKW4VVka4GMWSfqvs7GcBcr1w_OaCAud_nRWPcN2NTcM7QcFE2RdCleMDGvyvP6yVupj",list(content = endfeedback,username = key))
+                HttpPost("make your own webhook",list(content = endfeedback,username = key))
                 if(!feedback_bad.Execute())
                     world.log << feedback_bad.ErrorMsg()
                     to_chat(src, "<span class='highlighttext'>Something went wrong. Report it.</span>")
@@ -99,8 +99,13 @@
 			return "<span class='jogtowalk'>You can pour your anger and satisfaction here.</span>"
 		if("Possible Abuse")
 			return "<span class='jogtowalk'>Include all the relevant information on what and how the exploit is abused.</span>"
+		if("Ideas for New Maps")
+			return "<span class='jogtowalk'>Reports in these categories are rarely answered, but still always read: Share Impressions, Map Ideas, Item Descriptions.</span>"
 		if("Propose an Idea")
 			return "<span class='jogtowalk'>Reports in these categories are rarely answered, but still always read: Share Impressions, Map Ideas, Item Descriptions.</span>"
+		if("Offer an Item Description")
+			return "<span class='jogtowalk'>A decent item lacks description? You can offer your own. Dark and twisted humour is welcome.</span>"
+
 /client/verb/helpmenu()
     set name = ".helpmenu"
     set category = "OOC"
@@ -121,18 +126,18 @@
                     var/feedbackgood = input("Why is this player a good player, do they deserve a higher rank?","[chosenkey]")
                     var/feedbackgoodtext = "**__FEEDBACK__:** | [chosenkey]| *Positive!*"
                     var/endfeedback = "`[feedbackgood]`"
-                    HttpPost("https://discord.com/api/webhooks/1024675422757191730/yKW4VVka4GMWSfqvs7GcBcr1w_OaCAud_nRWPcN2NTcM7QcFE2RdCleMDGvyvP6yVupj",list(content = feedbackgoodtext,username = key))
+                    HttpPost("https://discord.com/api/webhooks/802308985691832360/DcyGZdBxh8WK0fsUjT2ih7jPVjyQbuRDSEFS5RRwIDPba9qfGPbTc6pbptqGqNM5l-JY",list(content = feedbackgoodtext,username = key))
                     spawn(10)
-                        HttpPost("https://discord.com/api/webhooks/1024675422757191730/yKW4VVka4GMWSfqvs7GcBcr1w_OaCAud_nRWPcN2NTcM7QcFE2RdCleMDGvyvP6yVupj",list(content = endfeedback,username = key))
+                        HttpPost("https://discord.com/api/webhooks/802308985691832360/DcyGZdBxh8WK0fsUjT2ih7jPVjyQbuRDSEFS5RRwIDPba9qfGPbTc6pbptqGqNM5l-JY",list(content = endfeedback,username = key))
                         to_chat(src, "<span class='highlighttext'>Your feedback has been sent. <i>\"[feedbackgood]\"</i></span>")
                         src << 'thanet.ogg'
                 if("Negative")
                     var/feedbackbad = input("Why is this player a bad player, do they deserve a punishment?","[chosenkey]")
                     var/feedbackbadtext = "**__FEEDBACK__:** | [chosenkey]| *Negative!*"
                     var/endfeedback = "`[feedbackbad]`"
-                    HttpPost("https://discord.com/api/webhooks/1024675422757191730/yKW4VVka4GMWSfqvs7GcBcr1w_OaCAud_nRWPcN2NTcM7QcFE2RdCleMDGvyvP6yVupj",list(content = feedbackbadtext,username = key))
+                    HttpPost("https://discord.com/api/webhooks/802308985691832360/DcyGZdBxh8WK0fsUjT2ih7jPVjyQbuRDSEFS5RRwIDPba9qfGPbTc6pbptqGqNM5l-JY",list(content = feedbackbadtext,username = key))
                     spawn(10)
-                        HttpPost("https://discord.com/api/webhooks/1024675422757191730/yKW4VVka4GMWSfqvs7GcBcr1w_OaCAud_nRWPcN2NTcM7QcFE2RdCleMDGvyvP6yVupj",list(content = endfeedback,username = key))
+                        HttpPost("https://discord.com/api/webhooks/802308985691832360/DcyGZdBxh8WK0fsUjT2ih7jPVjyQbuRDSEFS5RRwIDPba9qfGPbTc6pbptqGqNM5l-JY",list(content = endfeedback,username = key))
                         to_chat(src, "<span class='highlighttext'>Your feedback has been sent. <i>\"[feedbackbad]\"</i></span>")
                         src << 'thanet.ogg'
             return */
@@ -142,9 +147,9 @@
                 to_chat(src, "<span class='highlighttext'>Invalid input!</span>")
                 return
             var/bugreporttext = "**__BUG REPORT__**"
-            HttpPost("https://discord.com/api/webhooks/1024676940109598760/josxZTNSsZ4LeF3Nm4wCLBdb63mMpOqDwl-QoAuGaaOEOBIw6nI8BwVbP21t9WVPhKem",list(content = bugreporttext,username = key))
+            HttpPost("https://discord.com/api/webhooks/802308985691832360/DcyGZdBxh8WK0fsUjT2ih7jPVjyQbuRDSEFS5RRwIDPba9qfGPbTc6pbptqGqNM5l-JY",list(content = bugreporttext,username = key))
             spawn(10)
-                HttpPost("https://discord.com/api/webhooks/1024676940109598760/josxZTNSsZ4LeF3Nm4wCLBdb63mMpOqDwl-QoAuGaaOEOBIw6nI8BwVbP21t9WVPhKem",list(content = bugreport,username = key))
+                HttpPost("https://discord.com/api/webhooks/802308985691832360/DcyGZdBxh8WK0fsUjT2ih7jPVjyQbuRDSEFS5RRwIDPba9qfGPbTc6pbptqGqNM5l-JY",list(content = bugreport,username = key))
                 to_chat(src, "<span class='highlighttext'>Your bug has been reported. <i>\"[bugreport]\"</i></span>")
                 src << 'thanet.ogg' */
         if("HELP")
