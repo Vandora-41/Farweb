@@ -13,7 +13,7 @@
             if(bugtype == "(CANCEL)")
                 return
             to_chat(src, check_feedtype(bugtype))
-            var/bugreport = input("Write, you don't need to follow the template if your category isn't bug related!","Feedback","Problem description:\n\nCircumstances:\n\nSteps to reproduce the bug:") as message
+            var/bugreport = input("Write, you don't need to follow the template if your category isn't bug related!","Feedback","Sorunun Açıklaması:\n\nBu sorun ne olduda yaşandı?:\n\nHatayı bizimde test edebilmemiz için ne yapmamız gerekiyor?:") as message
             if(!bugreport)
                 to_chat(src, "<span class='highlighttext'>Invalid input!</span>")
                 return
