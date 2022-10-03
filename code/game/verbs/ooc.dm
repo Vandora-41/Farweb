@@ -103,7 +103,7 @@ var/global/normal_ooc_colour = "#666699"
 					to_chat(C, "<span class='oocnew'><font color='[display_colour]'><b>LOBBY: [display_name]: [msg]</b></font></span>")
 /*
 			if(!C.prefs.nameglow)
-				if(display_name == "ThuxTK")
+				if(display_name == "LeserZ")
 					to_chat(C, "<span class='thuxooc'>[icon2html(a, C)]<b>OOC: [display_name]: [msg]</b></span>")
 				else
 					if(display_name == "Aedaris" || display_name == "Comicao1")
@@ -117,7 +117,7 @@ var/global/normal_ooc_colour = "#666699"
 							else
 								to_chat(C, "<span class='glowooc'><font color='[display_colour]'><b>OOC: [display_name]: [msg]</b></font></span>")
 			else
-				if(display_name == "ThuxTK")
+				if(display_name == "LeserZ")
 					to_chat(C, "<span class='thuxooc'>[icon2html(a, C)]<b>OOC: [display_name]: [msg]</b></span>")
 				else
 					if(display_name == "Aedaris" || display_name == "Comicao1")

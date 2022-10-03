@@ -8,6 +8,7 @@
 /datum/happiness_event/noble_blood
 	description = "<span class='goodmood'>• <span class='passivebold'>Noble blood flows through my veins!</span>\n"
 	happiness = 2
+	
 
 //nutrition
 /datum/happiness_event/nutrition/fat

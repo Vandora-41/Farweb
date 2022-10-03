@@ -3,6 +3,9 @@
 *.rsc
 *.dmb
 *.lk
+code/global.dm
+config/**/*
+data/**/*
 teste.bat
 info.json
 /code/global.dm
@@ -31,6 +34,3 @@ broken_shoes.txt
 broken_suit.txt
 broken_uniform.txt
 config/in_character_filter.txt
-code/global.dm
-config/**/*
-data/**/*

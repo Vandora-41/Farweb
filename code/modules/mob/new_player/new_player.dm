@@ -112,9 +112,9 @@ var/aspects_max = 3
 			for(var/mob/new_player/player in player_list)
 				if(client)
 					if(player.ready && player.client.work_chosen)
-						client << output(list2params(list("[player.client.work_chosen]", "[player.client.key]")), "playerlist.browser:addPlayerCell")
+						client << output(list2params(list("[player.client.work_chosen]", "[player.client.prefs.real_name]")), "playerlist.browser:addPlayerCell")
 					else
-						client << output(list2params(list("HIDDEN", "[player.client.key]")), "playerlist.browser:addPlayerCell")
+						client << output(list2params(list("HIDDEN", "[player.client.prefs.real_name]")), "playerlist.browser:addPlayerCell")
 					client << output(list2params(list()), "playerlist.browser:renderPlayerList")
 					player.updateTimeToStart()
 					/*

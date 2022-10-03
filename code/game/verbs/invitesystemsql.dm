@@ -5,12 +5,12 @@ client/proc/invite_ckey()
 		to_chat(usr, "<span class='highlighttext'>They're too young.</span>")
 		return
 	age = "[invitee] age:[age] \n\n"
-	var/details = input("Fill this form and send it, 156 character limit", "Farweb", "Why are they interested in Farweb and will become an active and interesting player?") as message
+	var/details = input("Formu doldurup gonderiniz. 155 karakter limiti var.", "Farweb", "Kisinin discord id sini atip sunucuya neden aldiginizi aciklayiniz.") as message
 	var/reason = age
 	reason += details
 	if(length(reason) <= 99 || length(reason) >= 255)
 		if(!holder)
-			to_chat(usr, "<span class='highlighttext'>Reason is too long or too short.</span>")
+			to_chat(usr, "<span class='highlighttext'>Aciklamaniz cok kisa</span>")
 			return
 	var/DBQuery/queryInvites = dbcon.NewQuery("SELECT invitecount FROM playersfarweb WHERE ckey = \"[usr.ckey]\";")
 	if(!queryInvites.Execute())

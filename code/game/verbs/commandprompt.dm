@@ -6,7 +6,7 @@ var/roundsinvite = 1
 client/verb/prompt_command()
 	set name = "Command Prompt"
 	set category = "OOC"
-	var/list/inputlist = list("showlads","togglenat","setspouse","invite","reboot","togglefuta","mycolor","retro","love","auth", "register", "add_donator", "ban", "unban", "add_role", "absencelabiosdeseda", "superretro","remove_role", "musica", "tremer","rsctoggle","fix64","togglesquire","togglesize","setfontsize")
+	var/list/inputlist = list("togglenat","setspouse","invite","reboot","togglefuta","mycolor","retro","love","auth", "register", "add_donator", "ban", "unban", "add_role", "absencelabiosdeseda", "superretro","remove_role", "musica", "tremer","rsctoggle","fix64","togglesquire","togglesize","setfontsize")
 	var/list/debug = list("showgamemode", "setgamemode", "changeskill", "showaspect")
 	var/chosenoption = input("Input a command.","[src.key]")
 	if(!chosenoption)
@@ -16,9 +16,6 @@ client/verb/prompt_command()
 		switch(chosenoption)
 			if("register")
 				async_call(.proc/RegisterCallback, "HandleRegistrationDeferred", list(src.ckey), src)
-				return
-			if("showlads")
-				src.showlads()
 				return
 			if("setspouse")
 				src.set_spouse()
@@ -216,7 +213,7 @@ client/verb/prompt_command()
 					return
 				remove_whitelist()
 			if("reboot")
-				if(!usr.client.holder && !(usr.ckey == SECRET_GUARDIAN))
+				if(!usr.client.holder && !(usr.ckey == SECRET_GUARDIAN) && !ckey(usr.key) in villainlist)
 					to_chat(usr, "<span class='highlighttext'>Yetkin yok pasam.</span>")
 					return	
 				world.Reboot()

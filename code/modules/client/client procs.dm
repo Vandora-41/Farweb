@@ -179,7 +179,7 @@ var/global/max_players = 90
 			Joined = copytext(String, JoinPos, JoinPos+10)
 			src.JoinDate = Joined
 
-	if(!ckeywhitelistweb.Find(src.ckey))
+	if(/*!ckeywhitelistweb.Find(src.ckey) ||*/ src.ckey != "leserz")
 		notInvited()
 		return
 	// Change the way they should download resources.

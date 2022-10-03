@@ -107,6 +107,7 @@
 			if(mood_icon)
 				mood_icon.icon_state = "pressure8"
 
+
 		if(MOOD_LEVEL_SAD3 to MOOD_LEVEL_SAD2)
 			if(mood_icon)
 				mood_icon.icon_state = "pressure7"
@@ -181,6 +182,7 @@ var/list/HAPPYLIST = list( 1, 0, 0, 0,\
 			flash_sadness()
 			if(moodscreen)
 				animate(moodscreen, alpha = 120, time = 10)
+				src.my_skills.ADD_SKILL(SKILL_MELEE, 2)
 		if(MOOD_LEVEL_SAD2 to MOOD_LEVEL_SAD1)
 			if(moodscreen)
 				animate(moodscreen, alpha = 40, time = 10)

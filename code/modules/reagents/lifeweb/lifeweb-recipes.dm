@@ -45,7 +45,22 @@
 	result = "tricordazine"
 	required_reagents = list("inaprovaline" = 1, "dylovene" = 1)
 	result_amount = 2
+	
+/datum/chemical_reaction/heroin
+	name = "Heroin"
+	id = "heroin"
+	result = "heroin"
+	required_reagents = list("morphite" = 5, "californium" = 5)
+	result_amount = 1
 
+
+/datum/chemical_reaction/koko
+	name = "Cocaine"
+	id = "cocaine"
+	result = "cocaine"
+	required_reagents = list("heroin" = 5, "inaprovaline" = 5)
+	result_amount = 1
+	
 /datum/chemical_reaction/alkysine
 	name = "Alkysine"
 	id = "alkysine"
