@@ -23,6 +23,12 @@
 			to_chat(user, "I need 10 obols.")
 		else if(CA.worth > 10)
 			to_chat(user, "I have more than 10 obols.")
+			CA.worth = CA.worth - 10
+			CA.update_icon()
+			playsound(src.loc, 'sound/machines/coin_ins.ogg', 30, 0)
+			var/obj/item/weapon/reagent_containers/food/snacks/candy/C = new (user.loc)
+			C.name = "candy"
+			supply_shuttle.points += 5
 		else if(CA.worth == 10)
 			qdel(CA)
 			playsound(src.loc, 'sound/machines/coin_ins.ogg', 30, 0)

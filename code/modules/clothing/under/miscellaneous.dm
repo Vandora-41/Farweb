@@ -22,7 +22,7 @@
 	item_state = "w_suit"
 
 /obj/item/clothing/under/new_cut_alt
-	name = "mafiaman outfit"
+	name = "mafiaman outfit2"
 	desc = ""
 	icon_state = "new_cut_alt"
 	item_color = "new_cut_alt"
